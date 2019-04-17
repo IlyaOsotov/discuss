@@ -5,6 +5,7 @@ defmodule DiscussWeb.AuthController do
   alias Discuss.User
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, params) do
+    # TODO: handle ueberauth_error
     user_params = %{
       token: auth.credentials.token,
       email: auth.info.email,
