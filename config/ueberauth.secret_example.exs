@@ -1,10 +1,10 @@
 use Mix.Config
 
-config :ueberauth, UeberAuth,
+config :ueberauth, Ueberauth,
   providers: [
     github: { Ueberauth.Strategy.Github, [] }
   ]
 
-config :ueberauth, UeberAuth.Strategy.Github.Oauth,
+config :ueberauth, Ueberauth.Strategy.Github.OAuth,
   client_id: "client_id",
   client_secret: "client_secret"
