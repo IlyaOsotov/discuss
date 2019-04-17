@@ -9,7 +9,7 @@ defmodule DiscussWeb.AuthController do
     user_params = %{
       token: auth.credentials.token,
       email: auth.info.email,
-      nickname: auth.info.email,
+      nickname: auth.info.nickname,
       avatar: auth.info.urls.avatar_url,
       provider: "github"
     }
