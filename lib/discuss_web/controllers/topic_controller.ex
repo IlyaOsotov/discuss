@@ -1,6 +1,9 @@
 defmodule DiscussWeb.TopicController do
   use DiscussWeb, :controller
+  
   alias Discuss.Topic
+
+  plug Discuss.Plugs.RequireAuth when not action in [:index, :show]
 
   def index(conn, _params) do
     topics = Repo.all(Topic)
