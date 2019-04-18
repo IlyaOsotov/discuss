@@ -10,6 +10,8 @@ defmodule Discuss.User do
     field :nickname, :string
     field :avatar, :string
 
+    has_many :topics, Discuss.Topic
+
     timestamps()
   end
 
