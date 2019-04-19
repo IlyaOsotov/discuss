@@ -1,4 +1,11 @@
-<%= @topic.title %>
+<h5>
+  <%= @topic.title %>
+</h5>
+
+<div class="input-field">
+  <textarea class="materialize-textarea" id="new-comment"></textarea>
+  <button class="btn" id="submit-comment">Add Comment</button>
+</div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
