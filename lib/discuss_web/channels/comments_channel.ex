@@ -14,6 +14,7 @@ defmodule DiscussWeb.CommentsChannel do
   end
 
   def handle_in(name, %{"content" => content}, socket) do
+    # TODO: not working with 2 pages
     topic = socket.assigns.topic
     user_id = socket.assigns.user_id
 
