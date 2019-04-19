@@ -5,6 +5,7 @@ defmodule DiscussWeb.CommentsChannel do
     {:ok, %{}, socket}
   end
 
-  def handle_in() do
+  def handle_in(name, message, socket) do
+    {:reply, :ok, socket}
   end
 end
