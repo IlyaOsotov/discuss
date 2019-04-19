@@ -3,6 +3,8 @@ defmodule Discuss.User do
   import Ecto.Changeset
   alias Discuss.User
 
+  @derive { Jason.Encoder, only: [:nickname] }
+
   schema "users" do
     field :email, :string
     field :provider, :string

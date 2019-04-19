@@ -7,6 +7,7 @@ const createSocket = (topicId) => {
   let channel = socket.channel(`comments:${topicId}`, {})
   channel.join()
     .receive("ok", resp => {
+      console.log(resp)
       renderComments(resp.comments);
     })
     .receive("error", resp => {
@@ -30,9 +31,17 @@ function renderComment(event) {
 }
 
 function commentTemplate(comment) {
+  let nickname = 'Anonymous';
+  if (comment.user) {
+    nickname = comment.user.nickname;
+  }
+  
   return `
     <li class="collection-item">
       ${comment.content}
+      <div class="secondary-content">
+        ${nickname}
+      </div>
     </li>
   `;
 }
